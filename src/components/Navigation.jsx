@@ -7,10 +7,16 @@ export function Navigation() {
     const isColoredRoute = coloredRoutes.includes(location.pathname);
     const [isSticky, setSticky] = useState(false);
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isCallOpen, setCallOpen] = useState(false);
 
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
     };
+
+    const toggleCall = () => {
+        setCallOpen(!isCallOpen);
+      };
+      
     const handleCloseMenu = () => {
         const menu = document.getElementById('menu');
         menu.classList.add('animate__fadeOutRight');
@@ -84,12 +90,53 @@ export function Navigation() {
                     <div className='hidden sm:flex flex-row items-center'>
                         <button 
                             className='btn-effect w-full rounded-xl py-3 px-4 mt-1 border-[0.5px] border-btnsec flex flex-row items-center justify-center bg-bluegen text-lead font-exo tracking-[0.5] text-base'
-                            onClick={toggleMenu}
+                            onClick={toggleCall}
                         >
                             <span className='z-1'>Заказать звонок</span>
                         </button>
-
                     </div>
+
+                    {isCallOpen && (
+                        <div 
+                            className="fixed bg-bordo/50 top-0 right-0 left-0 bottom-0 z-50"
+                            onClick={toggleCall}
+                        >
+                            <div 
+                                id="menu"
+                                className={`animate__animated ${isCallOpen ? 'animate__fadeIn' : ''} absolute ml-2 bg-white shadow-md w-2/3 sm:w-[300px] h-[400px] inset-0 flex justify-center items-center p-8`}
+                            >
+                              <span 
+                                className='absolute text-white top-3 z-10 right-5 cursor-pointer'
+                                onClick={toggleCall}
+                              >
+                                  <div className="w-6 h-6 relative">
+                                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-bluegen rotate-45"></div>
+                                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-0.5 h-4 bg-bluegen rotate-45"></div>
+                                  </div>
+                              </span>
+                              <ul className='flex flex-col'>
+                                  <span className='text-lg tracking-[0.6px] text-lead-dark font-medium my-3'>МЕНЮ</span>
+
+                                  <Link to="/" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Главная</Link>
+                                  <Link to="/about" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>О компании</Link>
+                                  <Link to="/about#how-work" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Как работает?</Link>
+                                  <Link to="/contact" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Контакты</Link>
+                              </ul>
+                              <div className='flex flex-row items-center my-6'>
+                                  <img src="./assets/svg/telegram.svg" width={22} />
+                                  <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px] ms-2'>Telegram</p>
+                              </div>
+
+                              <div className='flex flex-row my-6'>
+                                  <img src="./assets/svg/tel.svg" width={22}/>
+                                  <div className='flex flex-col items-end ms-2'>
+                                      <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (903) 777-19-98</p>
+                                      <p className='text-xs font-exo font-extralight text-lead-dark tracking-[0.4px]'>Позвонить по телефону</p>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    )}
 
                     <div className='hidden xs:flex flex-row gap-2 items-center ms-2 justify-end'>
                         <p className='text-lg font-exo font-normal text-lead-dark tracking-[0.8px]'>Меню</p>
@@ -156,7 +203,7 @@ export function Navigation() {
                 <div className='hidden sm:flex flex-row items-center'>
                     <button 
                         className='btn-effect w-full rounded-xl py-2 px-4 border-[0.5px] border-btnsec flex flex-row items-center justify-center bg-bluegen text-lead font-exo tracking-[0.5] text-base'
-                        onClick={toggleMenu}
+                        onClick={toggleCall}
                     >
                         <img src="./assets/svg/menu.svg" className='z-1 mr-2' width={20}/>
                         <span className='z-1'>Выбрать тариф</span>
