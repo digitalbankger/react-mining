@@ -69,7 +69,7 @@ export function Navigation() {
                 className='container flex flex-row justify-between items-center px-5 sm:px-10 py-6 mt-1'
             >
                 <Link to="/" className='flex flex-row items-center'>
-                    <img src="./assets/svg/logo-new.svg" className='w-[180px] xs:w-[160px]'/>
+                    <img src="./assets/svg/logo-new.svg" className='w-[200px] xs:w-[180px]'/>
                 </Link>
 
                 <div className='flex flex-row'>
@@ -141,7 +141,7 @@ export function Navigation() {
                     <div className='hidden xs:flex flex-row gap-2 items-center ms-2 justify-end'>
                         <p className='text-lg font-exo font-normal text-lead-dark tracking-[0.8px]'>Меню</p>
                         <img src="./assets/svg/menu-dark.svg" 
-                            width={32} 
+                            width={28} 
                             onClick={toggleMenu}
                         />
                     </div>

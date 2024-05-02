@@ -5,7 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
- 
+      screens: {
+        'xs': {'max': '674px'},
+      },
       fontFamily: {
         mont: ['Montserrat', 'sans-serif'],
         exo: ["'Exo 2'", 'sans-serif'],
@@ -34,7 +36,7 @@ module.exports = {
         'bluegen': "#3579F4",
         'lead': "#fafcff",
         'dark': '#252F43',
-        'neutral': '#f0f5ff' 
+        'neutral': '#f0f5ff'
       },
       borderColor: {
         'bluegen': '#3579F4',

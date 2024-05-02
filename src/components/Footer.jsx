@@ -27,7 +27,7 @@ export function Footer() {
                     <Link to="/" className='flex flex-row items-center'>
                         <img src="./assets/svg/logo-light.svg" width={180}/>
                     </Link>
-                    <p className='xs:mt-2 w-[80%] sm:w-[60%] flex flex-row xs:text-center xs:text-lg text-base font-exo leading-snug font-light text-lead tracking-[0.4px] items-center'> MinSharing — облачный сервис для добычи настоящего биткоина без шума и пыли.</p>
+                    <p className='xs:mt-2 w-[90%] sm:w-[60%] flex flex-row xs:text-center xs:text-lg text-base font-exo leading-snug font-light text-lead tracking-[0.4px] items-center'> MinSharing — облачный сервис для добычи настоящего биткоина без шума и пыли.</p>
                 </div>
                 
                 <ul className='flex flex-col xs:items-center gap-2 xs:my-10'>
